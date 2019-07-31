@@ -1,0 +1,257 @@
+input_folder:
+  description:
+    Path to input data files (leave blank if data files are located
+    with configuration file)
+  value:
+    type: string
+    default: ''
+    units: '-'
+output_folder:
+  description:
+    Path to model output files (leave blank if files are to be located
+    with configuration file)
+  value:
+    type: string
+    default: ''
+    units: '-'
+
+file_sites:
+  description:
+    Input file containing site information
+  value:
+    type: string
+    default: sites.txt
+    units: '-'
+file_bound:
+  description:
+    Input file containing boundary condition information
+  value:
+    type: string
+    default: bound.txt
+    units: '-'
+file_snow:
+  description:
+    Input file containing snow depth information
+  value:
+    type: string
+    default: snow.txt
+    units: '-'
+file_rsnow:
+  description:
+    Input file containing snow thermal conductivity information
+  value:
+    type: string
+    default: rsnow.txt
+    units: '-'
+file_init:
+  description:
+    Input file containing snow layer depths and temperatures
+  value:
+    type: string
+    default: initial.txt
+    units: '-'
+file_grid:
+  description:
+    Input file of grid nodes in the z-direction
+  value:
+    type: string
+    default: grid.txt
+    units: '-'
+file_organic:
+  description:
+    Input file containing vegetation information
+  value:
+    type: string
+    default: vegetation.txt
+    units: '-'
+file_mineral:
+  description:
+    Input file containing mineral information
+  value:
+    type: string
+    default: geo.txt
+    units: '-'
+
+file_mean:
+  description:
+    Model output file containing mean temperature information
+  value:
+    type: string
+    default: mean.txt
+    units: '-'
+file_result:
+  description:
+    Model output file
+  value:
+    type: string
+    default: result.txt
+    units: '-'
+file_start:
+  description:
+    Model output file with restart information
+  value:
+    type: string
+    default: start.txt
+    units: '-'
+
+restart:
+  description:
+    Update model state starting from previous time step [0] or from
+    start of run [1]
+  value:
+    type: int
+    default: 1
+    range:
+      min: 0
+      max: 1
+    units: '-'
+time_step:
+  description:
+    Model time step
+  value:
+    type: float
+    default: 1.0
+    range:
+      min: 1.0
+      max: 10000.0
+    units: yr
+tau_m:
+  description:
+    Convergence parameter used by the Stefan subroutine
+  value:
+    type: float
+    default: 0.1
+    range:
+      min: 0.001
+      max: 10.0
+    units: yr
+t_min:
+  description:
+    Minimum fractional time step used in the Stefan subroutine
+  value:
+    type: float
+    default: 0.001
+    range:
+      min: 0.00001
+      max: 100.0
+    units: yr
+start_time:
+  description:
+    Model start time
+  value:
+    type: float
+    default: 0.0
+    range:
+      min: -1000000.0
+      max: 1000000.0
+    units: yr
+end_time:
+  description:
+    Model end time
+  value:
+    type: float
+    default: 1.0
+    range:
+      min: -1000000.0
+      max: 1000000.0
+    units: yr
+smooth_coef:
+  description:
+    Smoothing factor in Stefan subroutine
+  value:
+    type: float
+    default: 0.01
+    range:
+      min: 0.0001
+      max: 1.0
+    units: '-'
+unfrozen_water_coef:
+  description:
+    Unfrozen water coefficient
+  value:
+    type: float
+    default: 0.01
+    range:
+      min: 0.0001
+      max: 1.0
+    units: '-'
+itmax:
+  description:
+    Maximum number of iterations in Stefan subroutine
+  value:
+    type: int
+    default: 5
+    range:
+      min: 0
+      max: 1000
+    units: '-'
+n_sec_day:
+  description:
+    Number of seconds in a day
+  value:
+    type: float
+    default: 86400.0
+    range:
+      min: 1.0
+      max: 1000000.0
+    units: s
+n_time:
+  description:
+    Number of time steps over which temperature is averaged
+  value:
+    type: int
+    default: 365
+    range:
+      min: 1
+      max: 1000000
+    units: '-'
+sea_level:
+  description:
+    Elevation of borehole above mean sea level
+  value:
+    type: float
+    default: 0.0
+    range:
+      min: -1000.0
+      max: 100000.0
+    units: m
+n_frz_max:
+  description:
+    Maximum number of freezing fronts
+  value:
+    type: int
+    default: 4
+    range:
+      min: 0
+      max: 1000
+    units: '-'
+frz_front_min:
+  description:
+    Minimum depth of freezing front
+  value:
+    type: float
+    default: 0.05
+    range:
+      min: 0.0
+      max: 10000.0
+    units: m
+frz_front_max:
+  description:
+    Maximum depth of freezing front
+  value:
+    type: float
+    default: 10.0
+    range:
+      min: 0.0
+      max: 10000.0
+    units: m
+saturation_coef:
+  description:
+    Saturation coefficient (dimensionless, defined on unit interval)
+  value:
+    type: float
+    default: 0.95
+    range:
+      min: 0.0
+      max: 1.0
+    units: '-'
