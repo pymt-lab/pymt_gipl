@@ -1,0 +1,4 @@
+name: gipl
+language: fortran
+package: gipl
+class: GIPL

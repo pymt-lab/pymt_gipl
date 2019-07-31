@@ -1,0 +1,21 @@
+build:
+  define_macros: []
+  extra_compile_args: []
+  include_dirs: []
+  libraries: []
+  library_dirs: []
+  undef_macros: []
+info:
+  github_username: mdpiper
+  plugin_author: Mark Piper
+  plugin_license: MIT
+  summary: PyMT plugin for GIPL
+library:
+  entry_point:
+  - GIPL=bmigipl:bmi_gipl
+  language: fortran
+  register: ''
+plugin:
+  name: gipl
+  requirements:
+  - gipl
