@@ -99,3 +99,8 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# Package-specific
+bmi_interoperability.mod
+bmi_interoperability.o
+gipl.c
