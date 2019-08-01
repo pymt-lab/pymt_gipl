@@ -77,7 +77,7 @@ be installed with:
 
 .. code::
 
-  conda install gipl
+  conda install bmi-fortran=1.2 gipl
 
 To install `pymt_gipl`,
 

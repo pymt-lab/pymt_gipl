@@ -18,4 +18,5 @@ library:
 plugin:
   name: gipl
   requirements:
+  - bmi-fortran=1.2
   - gipl
