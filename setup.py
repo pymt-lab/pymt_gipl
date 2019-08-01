@@ -38,7 +38,7 @@ ext_modules = [
     Extension(
         "pymt_gipl.lib.gipl",
         ["pymt_gipl/lib/gipl.pyx"],
-        libraries=libraries + ["bmigipl"],
+        libraries=libraries + ["bmigiplf"],
         extra_objects=['pymt_gipl/lib/bmi_interoperability.o'],
         **common_flags
     ),

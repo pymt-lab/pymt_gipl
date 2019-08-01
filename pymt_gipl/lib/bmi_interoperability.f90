@@ -5,7 +5,7 @@ module bmi_interoperability
 
   use, intrinsic :: iso_c_binding
   use bmif_1_2
-  use bmigipl
+  use bmigiplf
 
   implicit none
 

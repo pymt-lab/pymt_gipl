@@ -12,7 +12,7 @@ info:
   summary: PyMT plugin for GIPL
 library:
   entry_point:
-  - GIPL=bmigipl:bmi_gipl
+  - GIPL=bmigiplf:bmi_gipl
   language: fortran
   register: ''
 plugin:
