@@ -41,11 +41,16 @@ contains
     integer (c_int), intent(in), value :: n
     character (len=1, kind=c_char), intent(in) :: config_file(n)
     integer (c_int) :: i, status
-    character (len=n, kind=c_char) :: config_file_
+    character (len=BMI_MAX_VAR_NAME, kind=c_char) :: config_file_
 
     ! Convert `config_file` from rank-1 array to scalar.
     do i = 1, n
        config_file_(i:i) = config_file(i)
+    enddo
+
+    ! Pad with spaces to max size.
+    do i = n+1, BMI_MAX_VAR_NAME
+       config_file_(i:i) = ' '
     enddo
 
     status = model_array(model_index)%initialize(config_file_)
