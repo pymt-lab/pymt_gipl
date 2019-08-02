@@ -62,6 +62,21 @@ print(' - units:', m.get_var_units(var_name))
 print(' - itemsize:', m.get_var_itemsize(var_name))
 print(' - nbytes:', m.get_var_nbytes(var_name))
 
+# Advance the model by one time step.
+print('Updating model...')
+m.update()
+print(' - current time:', m.get_current_time())
+
+# Advance the model by a fractional time step.
+print('Updating model...')
+m.update_frac(0.75)
+print(' - current time:', m.get_current_time())
+
+# Advance the model until a later time.
+print('Updating model...')
+m.update_until(15.0)
+print(' - current time:', m.get_current_time())
+
 # Finalize the model.
 m.finalize()
 print('Done.')
