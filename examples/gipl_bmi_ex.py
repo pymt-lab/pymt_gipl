@@ -77,6 +77,27 @@ print('Updating model...')
 m.update_until(15.0)
 print(' - current time:', m.get_current_time())
 
+# Get the soil__temperature values.
+print('Get values for {}:'.format(var_name))
+val = np.empty(grid_shape[2], dtype=np.float32)
+m.get_value(var_name, val)
+print(' - values (streamwise):')
+print(val)
+
+# The get_value_ptr method isn't implemented.
+
+# Set new soil__temperature values.
+print('Set new values for {}:'.format(var_name))
+new = np.arange(grid_shape[2], dtype=np.float32)
+print(' - new values (streamwise):')
+print(new)
+m.set_value(var_name, new)
+check = np.empty(grid_size, dtype=np.float32)
+m.get_value(var_name, check)
+print(' - check new values (set/get, streamwise):')
+print(check)
+print(' - are new and check the same? (True)', np.array_equal(new, check))
+
 # Finalize the model.
 m.finalize()
 print('Done.')
