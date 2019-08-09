@@ -22,8 +22,32 @@ for item in defaults:
     print(' - {}'.format(item))
 
 # Initialize the model with the defaults.
-# m.initialize(*defaults)
+m.initialize(*defaults)
+
+# Display the start, end, and current model time.
+print('Start time: {}'.format(m.start_time))
+print('End time: {}'.format(m.end_time))
+print('Current time: {}'.format(m.time))
+
+# Update the model state.
+print('Update the model state...')
+m.update()
+print('Current time: {}'.format(m.time))
+
+# Get the soil temperature at this time.
+soilt = m.var['soil__temperature'].data
+units = m.var['soil__temperature'].units
+print('Soil temperature: {} {}'.format(soilt, units))
+
+# Advance the model to the end.
+print('Run the model to the end...')
+m.update_until(m.end_time)
+print('Current time: {}'.format(m.time))
+
+# Get the final soil temperature distribution.
+soilt = m.var['soil__temperature'].data
+print('Soil temperature: {} {}'.format(soilt, units))
 
 # Finalize the model.
-# m.finalize()
+m.finalize()
 print('Done.')
