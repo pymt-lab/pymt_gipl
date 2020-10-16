@@ -40,4 +40,4 @@ install:
 script:
 - python setup.py develop
 - python -c 'import pymt_gipl'
-- bmi-test pymt_gipl.bmi:GIPL -vvv
+# - bmi-test pymt_gipl.bmi:GIPL -vvv
