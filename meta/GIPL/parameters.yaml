@@ -5,7 +5,6 @@ input_folder:
   value:
     type: string
     default: ''
-    units: '-'
 output_folder:
   description:
     Path to model output files (leave blank if files are to be located
@@ -13,7 +12,6 @@ output_folder:
   value:
     type: string
     default: ''
-    units: '-'
 
 file_sites:
   description:
@@ -21,56 +19,48 @@ file_sites:
   value:
     type: string
     default: sites.txt
-    units: '-'
 file_bound:
   description:
     Input file containing boundary condition information
   value:
     type: string
     default: bound.txt
-    units: '-'
 file_snow:
   description:
     Input file containing snow depth information
   value:
     type: string
     default: snow.txt
-    units: '-'
 file_rsnow:
   description:
     Input file containing snow thermal conductivity information
   value:
     type: string
     default: rsnow.txt
-    units: '-'
 file_init:
   description:
     Input file containing snow layer depths and temperatures
   value:
     type: string
     default: initial.txt
-    units: '-'
 file_grid:
   description:
     Input file of grid nodes in the z-direction
   value:
     type: string
     default: grid.txt
-    units: '-'
 file_organic:
   description:
     Input file containing vegetation information
   value:
     type: string
     default: vegetation.txt
-    units: '-'
 file_mineral:
   description:
     Input file containing mineral information
   value:
     type: string
     default: geo.txt
-    units: '-'
 
 file_mean:
   description:
@@ -78,21 +68,18 @@ file_mean:
   value:
     type: string
     default: mean.txt
-    units: '-'
 file_result:
   description:
     Model output file
   value:
     type: string
     default: result.txt
-    units: '-'
 file_start:
   description:
     Model output file with restart information
   value:
     type: string
     default: start.txt
-    units: '-'
 
 restart:
   description:
