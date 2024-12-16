@@ -5,7 +5,6 @@ import subprocess
 import contextlib
 import numpy as np
 
-import versioneer
 from setuptools import find_packages, setup
 
 from distutils.extension import Extension
@@ -88,14 +87,14 @@ class build_ext(_build_ext):
         _build_ext.run(self)
 
 
-cmdclass = get_cmdclass(pymt_components, cmdclass=versioneer.get_cmdclass())
+cmdclass = get_cmdclass(pymt_components)
 cmdclass["build_ext"] = build_ext
 
 setup(
     name="pymt_gipl",
     author="Mark Piper",
     description="PyMT plugin for gipl",
-    version=versioneer.get_version(),
+    version="v0.1.1",
     setup_requires=["cython"],
     ext_modules=ext_modules,
     packages=packages,
