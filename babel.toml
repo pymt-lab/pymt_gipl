@@ -1,0 +1,34 @@
+[library.GIPL]
+language = "fortran"
+library = "bmigiplf"
+header = ""
+entry_point = "bmi_gipl"
+
+[build]
+undef_macros = []
+define_macros = []
+libraries = []
+library_dirs = []
+include_dirs = []
+extra_compile_args = []
+
+[package]
+name = "pymt_gipl"
+requirements = []
+
+[info]
+github_username = "wk1984"
+package_author = "Kang Wang"
+package_author_email = "wangkang1984@gmail.com"
+package_license = "MIT License"
+summary = "PyMT plugin for the GIPL model"
+
+[ci]
+python_version = [
+    "3.12",
+]
+os = [
+    "linux",
+    "mac",
+    "windows",
+]
