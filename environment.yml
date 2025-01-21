@@ -6,7 +6,7 @@ dependencies:
   - python =3
   - pip
   - make
-  # - bmi-fortran =1.2.1
+  - bmi-fortran =1.2.1
   - gipl
   - fortran-compiler
   - c-compiler
