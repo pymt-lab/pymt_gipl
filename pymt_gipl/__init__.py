@@ -1,11 +1,7 @@
-#! /usr/bin/env python
+from pymt_gipl._bmi import GIPL
+from pymt_gipl._version import __version__
 
-from .bmi import (GIPL,
-)
-
-__all__ = ["GIPL",
+__all__ = [
+    "__version__",
+    "GIPL",
 ]
-
-from ._version import get_versions
-__version__ = get_versions()['version']
-del get_versions

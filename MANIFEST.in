@@ -1,2 +1,7 @@
-include versioneer.py
-include pymt_gipl/_version.py
+include *.md
+include Makefile
+include babel.toml
+include environment.yml
+include meson.build
+include examples/*
+recursive-include meta *
