@@ -1,0 +1,55 @@
+name: Test
+
+on: [push, pull_request]
+
+jobs:
+  build-and-test:
+    if:
+      github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
+
+    runs-on: ${{ matrix.os }}
+
+    defaults:
+      run:
+        shell: bash -l {0}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        python-version: ["3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: conda-incubator/setup-miniconda@v3
+        with:
+          miniforge-version: latest
+          activate-environment: fbld
+          environment-file: environment.yml
+          python-version: ${{ matrix.python-version }}
+
+      - name: Show conda installation info
+        run: |
+          conda info
+          conda list
+
+      - name: Build and install package
+        run: |
+          make install
+
+      - name: Test import
+        working-directory: ${{ github.workspace }}/examples
+        run: |
+          python -c 'import pymt_gipl'
+          python -c 'from pymt.models import GIPL'
+
+      # The bmi-tester isn't available for bmi-fortran=1.2
+      # - name: Test BMI
+      #   run: |
+      #     make test
+
+      - name: Run examples
+        working-directory: ${{ github.workspace }}/examples
+        run: |
+          python gipl_bmi_ex.py
+          python gipl_pymt_ex.py
