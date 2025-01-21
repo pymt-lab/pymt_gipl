@@ -35,7 +35,7 @@ dependencies = [
 homepage = "https://github.com/csdms"
 
 [project.entry-points."pymt.plugins"]
-ECSimpleSnow = "pymt_gipl._bmi:GIPL"
+GIPL = "pymt_gipl._bmi:GIPL"
 
 [project.optional-dependencies]
 dev = [
