@@ -36,7 +36,8 @@ print("Current time: {}".format(m.time))
 
 # Get the soil temperature at this time.
 soilt = m.var["soil__temperature"].data
-units = m.var["soil__temperature"].units
+# units = m.var["soil__temperature"].units
+units = "-"
 print("Soil temperature: {} {}".format(soilt, units))
 
 # Advance the model to the end.

@@ -51,7 +51,7 @@ grid_z = np.empty(grid_shape, dtype=np.float64)
 m.get_grid_z(grid_id, grid_z)
 print(" - z nodes:", grid_z)
 print(" - variable type:", m.get_var_type(var_name))
-print(" - units:", m.get_var_units(var_name))
+# print(" - units:", m.get_var_units(var_name))
 print(" - itemsize:", m.get_var_itemsize(var_name))
 print(" - nbytes:", m.get_var_nbytes(var_name))
 
