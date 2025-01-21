@@ -4,7 +4,7 @@ A record of changes for the *pymt_gipl* package.
 
 ## 0.2.0 (unreleased)
 
-- Nothing changed yet.
+- Update build system for Python >=3.12 (#3)
 
 
 ## 0.1.1 (2020-10-16)
