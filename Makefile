@@ -58,7 +58,7 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr .pytest_cache
 
 lint: ## check style with flake8
-	flake8 pymt_gipl
+	flake8 pymt_gipl examples
 
 pretty:
 	find pymt_gipl -name '*.py' | xargs isort
